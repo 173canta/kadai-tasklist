@@ -4,15 +4,23 @@
     <title>tasklist</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
-	<div class="container">
-		<%= render 'layouts/flash_tasks' %>
+   <body>
+    <%= render 'layouts/navbar' %>
 
-		<%= yield %>
-	</div>
+    <div class="container">
+       <div class="row">
+        <div class="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6">
+          <%= render 'layouts/flash_tasks' %>
+          <%= yield %>
+        </div>
+        
+    </div>
+    </div>
   </body>
 </html>
